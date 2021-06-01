@@ -1,0 +1,11 @@
+
+/* this is an abbreviated version of @font-face, meant to show how to reference the font in the relative url attribute.
+/* assuming the fonts were stored in public/fonts */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), url(/fonts/roboto.woff2) format('woff2');
+}

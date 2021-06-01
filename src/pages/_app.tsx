@@ -1,6 +1,7 @@
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import theme from "../theme";
+import "../css/main.css";
 
 const client = new ApolloClient({
   uri: process.env.NEXT_PUBLIC_API_URL as string,

@@ -1,12 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { select } from "d3";
+import Navbar from "../components/Navbar";
+// import ScatterPlot from "../d3Components/scatterplot/scatterplot";
 
 interface playgroundProps {}
 
 const Playground: React.FC<playgroundProps> = ({}) => {
   const [data, setData] = useState<number[]>([25, 30, 45, 60, 20]);
   const d3Container = useRef(null);
-  // const pBrowser = d3.select(d3Container.current);
 
   useEffect(() => {
     const svg = select(d3Container.current);
@@ -26,7 +27,9 @@ const Playground: React.FC<playgroundProps> = ({}) => {
 
   return (
     <div>
+      <Navbar />
       This is a D3 playground
+      {/* <ScatterPlot /> */}
       <svg ref={d3Container}></svg>
       <button onClick={() => setData(data.map((value) => value + 10))}>
         Update Data
@@ -39,15 +42,3 @@ const Playground: React.FC<playgroundProps> = ({}) => {
 };
 
 export default Playground;
-
-{
-  /* <svg width="300" height="300">
-<rect
-  width="100"
-  height="100"
-  fill="#F44336"
-  stroke="#8BC34A"
-  stroke-width="10"
-></rect>
-</svg> */
-}
